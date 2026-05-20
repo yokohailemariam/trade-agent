@@ -1,0 +1,15 @@
+services:
+  trade-agent:
+    build: .
+    image: trade-agent:latest
+    container_name: trade-agent
+    env_file:
+      - .env
+    volumes:
+      # Persist cache files and SQLite databases between runs
+      - ./data:/app/.cache
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1

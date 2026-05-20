@@ -1,0 +1,51 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Virtual environments and local Python tooling
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Packaging and build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test and coverage outputs
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Logs and runtime state
+*.log
+logs/
+*.pid
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit local state
+.streamlit/secrets.toml
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Notebook checkpoints
+.ipynb_checkpoints/

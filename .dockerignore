@@ -1,0 +1,8 @@
+.env
+.cache
+data
+__pycache__
+*.pyc
+*.db
+*.json
+.git
