@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: trade-agent
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    port: 8501
+    healthCheckPath: /
+    startCommand: streamlit run dashboard.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+
+    # Environment variables - add your sensitive values in Render dashboard
+    envVars:
+      - key: GOOGLE_API_KEY
+        scope: run
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"
+
+    # Auto-deploy on push to main
+    branch: main
+
+    # Resource limits (Free tier)
+    disk:
+      mountPath: /app/data
+      sizeGB: 1
